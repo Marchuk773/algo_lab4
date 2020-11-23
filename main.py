@@ -43,12 +43,13 @@ def algorithm(filename):
                                   width, length)
     solution = 0
     for column in range(length):
-        if solution_matrix[column][0] is None:
-            continue
-        else:
+        if solution_matrix[column][0] is not None:
             solution += solution_matrix[column][0]
     return solution
 
 
 if __name__ == '__main__':
-    print(algorithm('ijones1.in'))
+    from tests import AlgorithmTests
+    
+    tests = AlgorithmTests()
+    tests.testAlgorithm()
